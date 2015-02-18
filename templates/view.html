@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+  <head>
+    <title>CS496 Final Project</title>	
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<link rel="stylesheet" href="/stylesheet/jquery.mobile-1.4.2.min.css" />
+	<link rel="stylesheet" href="/stylesheet/fp.css" />
+	<script src="/stylesheet/jquery-1.11.0.min.js"></script>
+	<script src="/stylesheet/jquery.mobile-1.4.2.min.js"></script>
+  </head>  
+  <body class="tan fill" >
+  	<!-- HEADER & NAVBAR********************************************************************************** -->
+	<div>
+		<div data-role="header" data-theme="b">
+			<h3>Final Project Webpage</h3>
+		</div>
+		
+		<div data-role="navbar" class="ui-body-b">
+			<ul>
+				<li><a href="/zip">Get Forcast by Zip</a></li>				
+			</ul>
+		</div> 
+	
+	</div>
+	<div data-role="content" class="tan skip" data-theme="a">
+
+   	<table class="marg tan fill">
+   		<tr><td><b>Latitude:</b></td><td> {{lat[0]}}</td></tr>
+   		<tr><td><b>Longitude:</b></td><td> {{lon[0]}}</td></tr>
+   </table>
+   <hr />
+    {% for item in range(minTemp|length) %}	
+    	<div class="ui-bar ui-bar-a">
+					<h2>{{time24[item]}}</h2>
+		</div>
+  		<table>
+  			<tr>
+				<td><img src={{icon[item].text}} /> </td>
+			</tr>
+			<tr>
+				<td><b>Weather:</b></td><td>{{ sum[item]}}</td>
+			</tr>
+  			<tr>
+				<td><b>High:</b></td><td>{{ maxTemp[item].text}}&#176</td>
+			</tr>
+			<tr>
+				<td><b>Low:</b></td><td>{{ minTemp[item].text}}&#176</td>
+			</tr>				
+							    		
+    	</table>
+						
+	{% endfor %}						    		
+	
+	<hr />
+	Data Source:	
+	<a href="http://www.weather.gov/">www.weather.gov</a>
+  </div>
+  </body>
+</html>
+{% endautoescape %}

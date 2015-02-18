@@ -1,0 +1,4 @@
+cron:
+- description: empty_db
+  url: /empty
+  schedule: every 1 hours

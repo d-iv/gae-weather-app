@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+  <head>
+    <title>CS496 Final Project</title>	
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<link rel="stylesheet" href="/stylesheet/jquery.mobile-1.4.2.min.css" />
+	<link rel="stylesheet" href="/stylesheet/fp.css" />
+	<script src="/stylesheet/jquery-1.11.0.min.js"></script>
+	<script src="/stylesheet/jquery.mobile-1.4.2.min.js"></script>
+  </head> 
+  <body>
+	<!-- HEADER & NAVBAR********************************************************************************** -->
+	<div data-role="page" class="tan" data-theme="b">
+		<div data-role="header" >
+			<h3>Weather By Zip Code</h3>
+		</div>
+		<div data-role="navbar" >
+			<ul>
+				<li><a href="/zip">Get Forcast by Zip</a></li>	
+			</ul>
+		</div> 
+
+<div data-role="content" class="marg tan ui-field-contain" data-theme="a">
+   <form  action="/zipView" method="get" class="ui-field-contain">
+  		
+   		<label for="zip">Enter 5 Digit Zip Code</label>
+   		<input id="zip" name="zip" type="text" pattern="[0-9]{5}" required="true" placeholder="12345"/><br />
+   		
+ 
+   		
+   		<input type="submit" data-inline="true" value="submit" />
+   </form>
+</div>
+</div>
+  </body>
+</html>
+{% endautoescape %}
